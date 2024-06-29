@@ -2,7 +2,7 @@
 
 namespace BibliotecaDigital.Core.Application.Interfaces.Repositories
 {
-    public interface IAutorRepository : IGenericRepository<Autor>
+    public interface IBookRepository : IGenericRepository<Book>
     {
 
 
