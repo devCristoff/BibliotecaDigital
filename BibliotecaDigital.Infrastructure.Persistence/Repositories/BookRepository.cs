@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BibliotecaDigital.Core.Application.Interfaces.Repositories;
+using BibliotecaDigital.Core.Domain.Entities;
+using BibliotecaDigital.Infrastructure.Persistence.Contexts;
 
 namespace BibliotecaDigital.Infrastructure.Persistence.Repositories
 {
-    internal class BookRepository
+    public class BookRepository : GenericRepository<Book>,IBookRepository
     {
+        private readonly ApplicationContext _dbContext;
+
+        public BookRepository(ApplicationContext dbContext) : base(dbContext)
+        {
+            _dbContext = dbContext;
+        }
     }
 }
