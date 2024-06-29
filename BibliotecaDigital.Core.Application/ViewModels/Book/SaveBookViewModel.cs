@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BibliotecaDigital.Core.Application.ViewModelsBook
+namespace BibliotecaDigital.Core.Application.ViewModels.Book
 {
-    internal class ViewModelsBook
+    public  class SaveBookViewModel
     {
+
     }
 }
