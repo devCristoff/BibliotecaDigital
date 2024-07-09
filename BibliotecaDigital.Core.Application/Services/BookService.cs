@@ -17,5 +17,9 @@ namespace BibliotecaDigital.Core.Application.Services
             _BookRepository = bookRepository;
             _mapper = mapper;
         }
+
+        public BookService(IGenericRepository<Book> repository, IMapper mapper) : base(repository, mapper)
+        {
+        }
     }
 }
