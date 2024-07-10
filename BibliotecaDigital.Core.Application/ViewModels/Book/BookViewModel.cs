@@ -8,5 +8,7 @@ namespace BibliotecaDigital.Core.Application.ViewModels.Book
 {
     public class BookViewModel
     {
+         
+
     }
 }
