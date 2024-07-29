@@ -1,0 +1,43 @@
+﻿@model BibliotecaDigital.Core.Domain.Entities.Book
+
+@{
+    ViewData["Title"] = "Create New Book";
+}
+
+<h1>Create New Book</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Year" class="control-label"></label>
+        <input asp-for="Year" class="form-control" />
+        <span asp-validation-for="Year" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AutorId" class="control-label"></label>
+        <input asp-for="AutorId" class="form-control" />
+        <span asp-validation-for="AutorId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GenderId" class="control-label"></label>
+        <input asp-for="GenderId" class="form-control" />
+        <span asp-validation-for="GenderId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Add Book</button>
+    </div>
+</form>

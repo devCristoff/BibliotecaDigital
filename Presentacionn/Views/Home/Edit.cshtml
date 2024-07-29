@@ -1,0 +1,52 @@
+﻿@model BibliotecaDigital.Core.Domain.Entities.Book
+
+@{
+    ViewData["Title"] = "Edit Book";
+}
+
+<h2>Edit Book</h2>
+
+<form asp-action="Edit">
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Year" class="control-label"></label>
+        <input asp-for="Year" class="form-control" />
+        <span asp-validation-for="Year" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AutorId" class="control-label">Author</label>
+        <select asp-for="AutorId" class="form-control" asp-items="@(new SelectList(ViewData["Authors"] as List<BibliotecaDigital.Core.Domain.Entities.Autor>, "Id", "Name", Model.AutorId))">
+            <option value="">Select Author</option>
+        </select>
+        <span asp-validation-for="AutorId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="GenderId" class="control-label">Gender</label>
+        <select asp-for="GenderId" class="form-control" asp-items="@(new SelectList(ViewData["Genders"] as List<BibliotecaDigital.Core.Domain.Entities.Gender>, "Id", "Id", Model.GenderId))">
+            <option value="">Select Gender</option>
+        </select>
+        <span asp-validation-for="GenderId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
