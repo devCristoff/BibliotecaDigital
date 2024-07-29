@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BibliotecaDigital.Core.Domain.Entities.Book>
+
+@{
+    ViewData["Title"] = "Books Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Books List</h1>
+    <p>Here is a list of all books:</p>
+</div>
+
+<div class="container mt-4">
+    <!-- Botón para crear un nuevo libro -->
+    <a href="@Url.Action("Create", "Home")" class="btn btn-primary mb-3">Create New Book</a>
+
+    <!-- Tabla de libros -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Year</th>
+                <th>Author</th>
+                <th>Gender</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Description</td>
+                    <td>@book.Year</td>
+                    <td>@(book.Autor != null ? book.Autor.Name + " " + book.Autor.LastName : "Unknown")</td>
+                    <td>@(book.Gender != null ? book.Gender.Id : "Unknown")</td>
+                    <td>
+                        <!-- Acciones adicionales, como Editar y Eliminar, pueden ir aquí -->
+                        <a href="@Url.Action("Edit", "Home", new { id = book.Id })" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="@Url.Action("Delete", "Home", new { id = book.Id })" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

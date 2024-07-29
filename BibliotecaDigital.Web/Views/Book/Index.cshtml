@@ -1,0 +1,36 @@
+﻿@model IEnumerable<BibliotecaDigital.Core.Domain.Entities.Book>
+
+@{
+    ViewData["Title"] = "Books Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Books List</h1>
+    <p>Here is a list of all books:</p>
+</div>
+
+<div class="container mt-4">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Year</th>
+                <th>Author</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Description</td>
+                    <td>@book.Year</td>
+                    <td>@book.Autor.Name @book.Autor.LastName</td>
+                    <td>@book.Gender.Id</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
