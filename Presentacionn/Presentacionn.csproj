@@ -14,7 +14,6 @@
     <ProjectReference Include="..\BibliotecaDigital.Core.Application\BibliotecaDigital.Core.Application.csproj" />
     <ProjectReference Include="..\BibliotecaDigital.Core.Domain\BibliotecaDigital.Core.Domain.csproj" />
     <ProjectReference Include="..\BibliotecaDigital.Infrastructure.Persistence\BibliotecaDigital.Infrastructure.Persistence.csproj" />
-    <ProjectReference Include="..\BibliotecaDigital.Web\BibliotecaDigital.Web.csproj" />
   </ItemGroup>
 
 </Project>
